@@ -20,10 +20,42 @@ function getHumanChoice () {
         humanChoice.toLowerCase() === "paper" ||
         humanChoice.toLowerCase() === "scissors"
     ) {
-        return humanChoice
+        return humanChoice.toLowerCase()
     }
     // If user's choice not correct, we display a message
     else {
         return console.log("Chose again.")
+    }
+}
+
+function compareInputs (computerChoice, humanChoice) {
+    if (computerChoice === "rock" && humanChoice === "scissors") {
+        return console.log("You lose! Rock beats Scissors.")
+    }
+
+    else if (computerChoice === "paper" && humanChoice == "rock") {
+        return console.log("You lose! Paper beats Rock.")
+    }
+
+    else if (computerChoice === "scissors" && humanChoice === "paper") {
+        return console.log("You lose! Scissors beats Paper")
+    }
+
+    else if (computerChoice === humanChoice) {
+        return console.log("It's a tie!")
+    }
+    if (humanChoice === "rock" && computerChoice === "scissors") {
+        return console.log("You win! Rock beats Scissors.")
+    }
+
+    else if (humanChoice === "paper" && computerChoice == "rock") {
+        return console.log("You win! Paper beats Rock.")
+    }
+
+    else if (humanChoice === "scissors" && computerChoice === "paper") {
+        return console.log("You win! Scissors beats Paper")
+    }
+    else {
+        return console.log("Something went wrong.")
     }
 }
