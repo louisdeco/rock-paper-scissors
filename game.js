@@ -29,33 +29,82 @@ function getHumanChoice () {
 }
 
 function compareInputs (computerChoice, humanChoice) {
+    // Initialize our scores
+    let computerScore = 0;
+    let humanScore = 0;
+    // Provide with if statements all the possibilites
     if (computerChoice === "rock" && humanChoice === "scissors") {
-        return console.log("You lose! Rock beats Scissors.")
+        return [
+            console.log("You lose! Rock beats Scissors."),
+            computerScore = 1,
+            humanScore = 0
+        ]
     }
 
     else if (computerChoice === "paper" && humanChoice == "rock") {
-        return console.log("You lose! Paper beats Rock.")
+        return [
+            console.log("You lose! Paper beats Rock."),
+            computerScore = 1,
+            humanScore = 0
+        ]
     }
 
     else if (computerChoice === "scissors" && humanChoice === "paper") {
-        return console.log("You lose! Scissors beats Paper")
+        return [
+            console.log("You lose! Scissors beats Paper."),
+            computerScore = 1,
+            humanScore = 0
+        ]
     }
 
     else if (computerChoice === humanChoice) {
-        return console.log("It's a tie!")
+        return [
+            console.log("It's a tie!"),
+            computerScore = 0,
+            humanScore = 0
+        ]
     }
     if (humanChoice === "rock" && computerChoice === "scissors") {
-        return console.log("You win! Rock beats Scissors.")
+        return [
+            console.log("You win! Rock beats Scissors."),
+            computerScore = 0,
+            humanScore = 1
+        ]
     }
 
     else if (humanChoice === "paper" && computerChoice == "rock") {
-        return console.log("You win! Paper beats Rock.")
+        return [
+            console.log("You win! Paper beats Rock."),
+            computerScore = 0,
+            humanChoice = 1
+        ]
     }
 
     else if (humanChoice === "scissors" && computerChoice === "paper") {
-        return console.log("You win! Scissors beats Paper")
+        return [
+            console.log("You win! Scissors beats Paper."),
+            computerScore = 0,
+            humanScore = 1
+        ]
     }
     else {
-        return console.log("Something went wrong.")
+        return [
+            console.log("Something went wrong."),
+            computerScore = 0,
+            humanScore = 0
+        ]
     }
+}
+
+function roundRockPaperScissors () {
+    // Get the choices
+    let computerChoice = getComputerChoice()
+    let humanChoice = getHumanChoice()
+
+    // Get the message and the scores
+    let resultArray = compareInputs(computerChoice, humanChoice)
+    
+    // Log the message for a round
+    console.log(resultArray[0])
+    return resultArray
 }
