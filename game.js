@@ -108,3 +108,45 @@ function roundRockPaperScissors () {
     console.log(resultArray[0])
     return resultArray
 }
+
+function playGame () {
+    // Initialise the score
+    let humanScore = 0;
+    let computerScore = 0
+
+    // Play five rounds and increment scores
+    let resultArray = roundRockPaperScissors()
+    computerScore += resultArray[1]
+    humanScore += resultArray[2]
+
+    resultArray = roundRockPaperScissors()
+    computerScore += resultArray[1]
+    humanScore += resultArray[2]
+
+    resultArray = roundRockPaperScissors()
+    computerScore += resultArray[1]
+    humanScore += resultArray[2]
+
+    resultArray = roundRockPaperScissors()
+    computerScore += resultArray[1]
+    humanScore += resultArray[2]
+
+    resultArray = roundRockPaperScissors()
+    computerScore += resultArray[1]
+    humanScore += resultArray[2]
+
+    // Announce the winner
+    if (computerScore > humanScore) {
+        console.log("The winner is the computer!")
+    }
+    else if (computerScore === humanScore) {
+        console.log("No one wins.")
+    }
+    else {
+        console.log("Human superiority.")
+    }
+    console.log(`Human score: ${humanScore}`)
+    console.log(`Computer score: ${computerScore}`)
+}
+
+playGame()
